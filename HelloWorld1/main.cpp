@@ -1,6 +1,6 @@
 //Biblioteque iostream permet d'afficher du texte sans ça cpp ne connais pas cout.
 #include <iostream>
-
+#include <string>
 
 //une directive qui permet d'utiliser les éléments de la bibliothèque standard comme cout, cin ou string.
 using namespace std;
@@ -8,22 +8,17 @@ using namespace std;
 //le commencement du programme tout les programmes commencent par la fonction main.
 int main()
 {
-	//variable avec nom et valeur
-	string nomUtilisateur = "";
-	int ageUtilisateur = 0;
-	
-	//permet d'afficher du texte 
-	cout << "comment appeler vous ?" << endl;
+	cout << "Combien vaut pi ?" << endl;
+	double piUtilisateur = -1; //On crée une case mémoire pour stocker un nombre réel
+	cin >> piUtilisateur; //et on remplit cette case avec ce qu'ecrit l'utilisateur
 
-	//cin permet à l'utilisateur de mentionner son nom d'utilisateur
-	cin >> nomUtilisateur;
+	cin.ignore();
 
-	cout << "Votre age ?" << endl;
-	//permet à l'utilisateur de mentionner son âge
-	cin >> ageUtilisateur;
+	cout << "Quel est votre nom ?" << endl;
+	string nomUtilisateur = "Sans nom"; //On crée une case memoire pour stocker un nom
+	getline(cin, nomUtilisateur); //on remplit cette case avec toute la ligne que l'utilisateur a écrit
 
-	//ensuite, sur cette ligne, le programme récupère ce que l'utilisateur a mentionné : son nom et son âge 
-	cout << "Heureux de vous rencontrer " << nomUtilisateur << " vous avez " << ageUtilisateur << " ans" << endl;
+	cout << "Vous vous appeler " << nomUtilisateur << " et vous penser que pi vaut " << piUtilisateur << endl;
 
 	return 0;
 }
